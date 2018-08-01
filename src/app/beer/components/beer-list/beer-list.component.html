@@ -1,0 +1,9 @@
+<div class="beer-list">
+  <h2>Beer List</h2>
+  <div *ngFor="let beer of beers; index as i;" (click)="onSelect(beer)" [class.selected]="beer === selectedBeer">
+    <p class="">{{ beer.name }}</p>
+    <span>{{ beer.ingredients | join }}</span>
+    <img [src]="beer.img" alt={{beer.name}}>
+  </div>
+  <button type="button" (click)="onDelete()">Delete Beer</button>
+</div>

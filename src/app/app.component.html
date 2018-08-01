@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="app">
+  <h1>
+    Welcome to {{ title | uppercase }}!
+  </h1>
+  <app-beer-creator></app-beer-creator>
+</div>
+<ul>
+  <li *ngFor="let beer of beers$ | async">{{beer.name}}</li>
+</ul>
+

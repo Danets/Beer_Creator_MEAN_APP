@@ -1,0 +1,8 @@
+<div class="beer-button" [formGroup]="parent">
+  <button
+    type="button"
+    (click)="onClick()"
+    [disabled]="parent.invalid">
+    <ng-content></ng-content>
+  </button>
+</div>

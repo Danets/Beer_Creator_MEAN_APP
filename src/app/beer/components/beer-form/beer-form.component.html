@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+
+  <app-beer-selector
+    [parent]="form"
+    [ingredients]="ingredients"
+    [selected]="control.value"
+    (select)="selectIngredient($event)">
+  </app-beer-selector>
+
+  <app-beer-name
+    [parent]="form">
+  </app-beer-name>
+
+  <app-beer-selected
+    [parent]="form"
+    [selected]="control.value"
+    (remove)="removeIngredient($event)">
+  </app-beer-selected>
+
+  <app-beer-button
+    [parent]="form"
+    (add)="onSubmit()">
+    Add beer
+  </app-beer-button>
+
+</form>

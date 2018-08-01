@@ -1,0 +1,14 @@
+<div class="ingredients-selector" [formGroup]="parent">
+  <div
+    class="ingredients-selector__item"
+    *ngFor="let ingredient of ingredients"
+    [class.active]="isActive(ingredient)"
+    (click)="onSelect(ingredient)">
+    {{ ingredient }}
+  </div>
+  <div
+    class="error"
+    *ngIf="invalid">
+    Select at least 1 ingredient!
+  </div>
+</div>

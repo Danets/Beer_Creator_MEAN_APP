@@ -1,0 +1,12 @@
+<div class="beer-creator">
+  <div class="beer-creator__title">
+    <h1>
+      <img src="assets/beer.svg" style="width: 50px; height: 50px;">
+      Beer Creator
+    </h1>
+  </div>
+  <div class="beer-creator__panes">
+    <app-beer-form [ingredients]="ingredients$ | async" (add)="addBeer($event)"></app-beer-form>
+    <app-beer-list [beers]="beers$ | async" (delete)="deleteBeer($event)"></app-beer-list>
+  </div>
+</div>

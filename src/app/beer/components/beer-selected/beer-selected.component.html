@@ -1,0 +1,22 @@
+<div class="beer-selected" [formGroup]="parent">
+  <div class="beer-selected__empty" *ngIf="!selected.length">
+    Select ingredients to create beer
+  </div>
+  <div
+    class="beer-selected__list"
+    *ngIf="selected.length"
+    formArrayName="ingredients">
+    <div
+      class="beer-selected__item"
+      *ngFor="let ingredient of selected; index as i;">
+      <div [formGroupName]="i">
+        {{ ingredient }}
+        <button
+          type="button"
+          (click)="onRemove(i)">
+          <img src="assets/delete-button.svg">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
