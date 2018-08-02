@@ -14,8 +14,6 @@ import { BeerService } from '../../beer.service';
   styleUrls: ['./beer-creator.component.scss']
 })
 export class BeerCreatorComponent implements OnInit {
-  //beers$ = this.beerService.select<Beer[]>('beers');
-  //ingredients$ = this.beerService.select<Ingredient[]>('ingredients');
   beers$: Observable<Beer[]>;
   ingredients$: Observable<Ingredient[]>;
   index: number;
@@ -28,16 +26,13 @@ export class BeerCreatorComponent implements OnInit {
     this.store.dispatch(new fromStore.GetBeer());
   }
   addBeer(beer: Beer) {
-    //this.beerService.addBeer(beer).subscribe(data => console.log(data));
     if (!beer.hasOwnProperty('img')) {
       beer.img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSZYr2VC823tIrgOzt0ia76oYNHUPfXzOQaC_vZzNyWzxSdb7J';
     }
     this.store.dispatch(new fromStore.AddBeer(beer));
   }
   deleteBeer(beer) {
-    //this.beerService.deleteBeer(beer['_id']).subscribe();
     this.store.dispatch(new fromStore.DeleteBeer(beer));
-    console.log(beer);
   }
 
 }

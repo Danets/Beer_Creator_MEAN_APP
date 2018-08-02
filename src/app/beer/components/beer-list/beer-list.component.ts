@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import { Beer, Ingredient } from '../../beer';
-import {Observable } from 'rxjs';
 
 @Component({
   selector: 'app-beer-list',

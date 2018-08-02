@@ -8,6 +8,7 @@ import { Beer, Ingredient } from '../../beer';
   styleUrls: ['./beer-selected.component.scss']
 })
 export class BeerSelectedComponent implements OnInit {
+
   @Input()
   parent: FormGroup;
 
